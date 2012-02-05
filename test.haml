@@ -1,6 +1,10 @@
 !!! 5
 %head
-  %script{ src: "../build/bad-ie-standalone.js" }
+  - if ENV['INCLUDE_JQUERY']
+    %script{ src: "../build/bad-ie-standalone.js" }
+  - else
+    %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" }
+    %script{ src: "../build/bad-ie.js" }
 %body
   .content
     This is my page.

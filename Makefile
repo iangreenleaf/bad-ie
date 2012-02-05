@@ -10,4 +10,5 @@ warning: warning.haml
 	haml warning.haml build/warning.html
 
 test: warning test.haml
-	haml test.haml test/index.html
+	haml test.haml test/test.html
+	INCLUDE_JQUERY=true haml test.haml test/test-standalone.html
