@@ -12,3 +12,7 @@ warning: warning.haml
 test: warning test.haml
 	haml test.haml test/test.html
 	INCLUDE_JQUERY=true haml test.haml test/test-standalone.html
+
+gh-pages: all
+	git update-ref refs/heads/gh-pages master
+	git push origin gh-pages
