@@ -1,5 +1,7 @@
 !!! 5
 %head
+  - if ENV['ALWAYS_DISPLAY']
+    %script{ src: "../build/bad-ie-standalone.js" }
   /[if IE]
     - if ENV['INCLUDE_JQUERY']
       %script{ src: "../build/bad-ie-standalone.js" }

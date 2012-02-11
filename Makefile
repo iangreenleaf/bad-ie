@@ -11,7 +11,8 @@ warning: warning.haml
 
 test: warning test.haml
 	haml test.haml test/test.html
-	INCLUDE_JQUERY=true haml test.haml test/test-standalone.html
+	INCLUDE_JQUERY=true haml test.haml test/standalone.html
+	ALWAYS_DISPLAY=true haml test.haml test/always.html
 
 gh-pages: all
 	git update-ref refs/heads/gh-pages master
