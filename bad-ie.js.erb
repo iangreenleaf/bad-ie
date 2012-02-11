@@ -4,7 +4,11 @@
 <% else %>
      var badIeJQuery = jQuery
 <% end %>
+var root = badIeJQuery("script").last().attr('src');
+root = root.replace(/\/[^\/]*$/, '');
 badIeJQuery(document).ready(function($) {
   var fragment = "<%= File.new("build/warning.html").readlines.map(&:chomp).join("") %>";
   $("body").prepend($(fragment));
+  var css = $("<link type='text/css' rel='stylesheet' media='all' href='" + root + "/style.css' />");
+  $("head").append(css);
 });

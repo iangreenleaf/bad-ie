@@ -1,8 +1,11 @@
-all: html javascript
+all: html javascript css
 
 javascript: warning bad-ie.js.erb
 	erb bad-ie.js.erb > build/bad-ie.js
 	INCLUDE_JQUERY=true erb bad-ie.js.erb > build/bad-ie-standalone.js
+
+css: style.scss
+	sass style.scss build/style.css
 
 html: warning test
 
