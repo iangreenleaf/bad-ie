@@ -6,6 +6,5 @@
 <% end %>
 badIeJQuery(document).ready(function($) {
   var fragment = "<%= File.new("build/warning.html").readlines.map(&:chomp).join("") %>";
-  fragment = $('<!--[if IE]>' + fragment + '<[endif]-->');
-  $("body").prepend(fragment);
+  $("body").prepend($(fragment));
 });
